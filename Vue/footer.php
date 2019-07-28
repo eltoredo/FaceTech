@@ -1,0 +1,1 @@
+<footer><CENTER><b>CRÉÉ PAR JEAN-BAPTISTE ELBAZ, MAHAMADOU NIMAGA ET TANGUY EPIFANIC POUR L'ÉCOLE <a href="https://www.intechinfo.fr/"><img style="width: 5%; margin-bottom: 0.3%" src="../Images/Logo2.jpg"></b></a></CENTER></footer>

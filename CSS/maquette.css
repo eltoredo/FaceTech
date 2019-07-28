@@ -1,0 +1,41 @@
+@font-face {
+	font-family: 'CODE_Bold';
+	src: url('../Fonts/CODE_Bold.otf') format('truetype'),
+	url('CODE_Bold.svg#CODE_Bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+}
+
+header {
+	background-color: grey;
+	padding-bottom: 2%;
+}
+
+a {
+	text-decoration: none;
+	color: darkred;
+}
+
+header img {
+	margin-bottom: -2%;
+	margin-top: 1%;
+}
+
+header input {
+	height: 2em;
+}
+
+#espace {
+	margin-left: 7%;
+}

@@ -1,0 +1,94 @@
+DROP TABLE IF EXISTS Projets ;
+
+CREATE TABLE Projets (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `chef` INT NOT NULL,
+  `nom` VARCHAR(45) NOT NULL,
+  `type` ENUM('PI', 'PFH') NOT NULL COMMENT 'PI ou PFH',
+  `pdate` DATETIME NOT NULL,
+  `membre` INT NOT NULL,
+  `statut` ENUM('encours', 'fini') NOT NULL COMMENT 'fini ou en cours',
+  `niveau` VARCHAR(3) NULL,
+  `descr` TEXT NULL,
+  `nblike` INT DEFAULT 0 NOT NULL,
+  `logo` VARCHAR(5000) NULL,
+  `fichier` VARCHAR(5000) NULL,
+  `remq` VARCHAR(45) NULL)
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  
+DROP TABLE IF EXISTS Groupes ;
+
+CREATE TABLE Groupes (
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `uid` INTEGER NOT NULL,
+  `pid` INTEGER NOT NULL,
+  `remq` VARCHAR(45) NULL)
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+DROP TABLE IF EXISTS Conversations ;
+
+DROP TABLE IF EXISTS Utilisateurs ;
+
+CREATE TABLE Utilisateurs (
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `nom` VARCHAR(45) NOT NULL,
+  `prenom` VARCHAR(45) NOT NULL,
+  `statut` ENUM('ON', 'OFF') NOT NULL,
+  `rang` VARCHAR(10) NULL,
+  `udate` DATE NOT NULL,
+  `classe` VARCHAR(3) NULL,
+  `descr` text NULL,
+  `avatar` VARCHAR(100) NULL,
+  `email` VARCHAR(75) NULL,
+  `Mdp` varchar(500) DEFAULT NULL,
+  `remq` VARCHAR(45) NULL
+   )
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+DROP TABLE IF EXISTS Jaime ;
+CREATE TABLE Jaime (
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `uid` INTEGER NOT NULL,
+  `pid` INTEGER NULL,
+  `remq` VARCHAR(45) NULL
+   )
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+
+DROP TABLE IF EXISTS Cours ;
+CREATE TABLE Cours (
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `uid` INTEGER NOT NULL,
+  `theme` VARCHAR(45) NOT NULL,
+  `cdate` DATETIME NOT NULL,
+  `classe` VARCHAR(3) NOT NULL,
+  `descr` TEXT NULL,
+  `fichier` VARCHAR(5000) NULL,
+  `remq` VARCHAR(45) NULL
+   )
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+
+
+DROP TABLE IF EXISTS Commentaires ;
+CREATE TABLE Commentaires (
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `descr` TEXT NOT NULL,
+  `uid` INTEGER NOT NULL,
+  `comdate` DATETIME NOT NULL,
+  `pid` INTEGER NULL,
+  `cid` INTEGER NULL,
+  `remq` VARCHAR(45) NULL
+   )
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+ 
+
+DROP TABLE IF EXISTS Messages ;
+CREATE TABLE Messages(
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `uid` INTEGER NOT NULL,
+  `descr` VARCHAR(2500) NULL,
+  `mdate` DATETIME NOT NULL,
+  `remq` VARCHAR(45) NULL
+  )
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
